@@ -4,6 +4,15 @@ class ContaBancaria {
     
   static double saldo;  
   
+  public static boolean validarSangria(double valor){    
+    
+    if(valor > saldo){
+      return false;
+    }
+    
+    return true;
+  }
+  
   public static void somaSaldo(double valor){
     saldo = saldo + valor;
   }
@@ -25,6 +34,11 @@ class ContaBancaria {
   }
   
   public static double sacar(double valor) {
+      
+      if(validarSangria(valor) == false){
+        System.out.print("Saldo insuficiente\n\n");
+        menu();
+      }
       
       saldo = saldo + valor;
         
@@ -61,10 +75,12 @@ class ContaBancaria {
 
       case 2:
       sacar(10.0);
+      menu();
       break;
 
       case 3:
       exibirSaldo();
+      menu();
       break;
 
       case 4:
@@ -84,9 +100,7 @@ class ContaBancaria {
     saldo = 0;
 
     menu();    
-    
-    //System.out.print(saldo);
-    
+       
     System.exit(0);
 		
 	}
