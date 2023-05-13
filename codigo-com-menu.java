@@ -13,7 +13,7 @@ class ContaBancaria {
     return true;
   }
   
-  public static void somaSaldo(double valor){
+  public static void reforcoSaldo(double valor){
     saldo = saldo + valor;
   }
     
@@ -27,7 +27,7 @@ class ContaBancaria {
       
       valor = teclado.nextDouble();
       
-      somaSaldo(valor);  
+      reforcoSaldo(valor);  
 
       menu();      
       
