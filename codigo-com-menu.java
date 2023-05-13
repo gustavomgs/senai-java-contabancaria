@@ -3,13 +3,25 @@ import java.util.Scanner;
 class ContaBancaria {
     
   static double saldo;  
+  
+  public static void somaSaldo(double valor){
+    saldo = saldo + valor;
+  }
     
+  public static void depositar() {
     
-  public static void depositar(double valor) {
+      Scanner teclado = new Scanner(System.in);   
       
-      saldo = saldo + valor;
-        
-      menu();
+      double valor;
+      
+      System.out.print("Qual o valor que você deseja depositar?\n\n");
+      
+      valor = teclado.nextDouble();
+      
+      somaSaldo(valor);  
+
+      menu();      
+      
   }
   
   public static double sacar(double valor) {
@@ -44,7 +56,7 @@ class ContaBancaria {
     
     switch (opcao) {
       case 1:
-      depositar(10.0);
+      depositar();
       break;
 
       case 2:
