@@ -5,11 +5,11 @@ class ContaBancaria {
   static double saldo;  
     
     
-  public static double depositar(double valor) {
+  public static void depositar(double valor) {
       
       saldo = saldo + valor;
         
-    return saldo;
+      menu();
   }
   
   public static double sacar(double valor) {
@@ -26,13 +26,13 @@ class ContaBancaria {
     return saldo;
   }
   
-  public static void menu(){
+  public static void menu() {
     Scanner teclado = new Scanner(System.in);   
 
     int opcao;
     
     System.out.print("Menu do meu sistema\n\n");
-    System.out.print("------------------------");
+    System.out.print("------------------------\n\n");
     System.out.print("Por favor selecione uma opcao:\n");
     System.out.print("------------------------\n\n");
     System.out.print("[1] - Depositar\n");
@@ -63,16 +63,17 @@ class ContaBancaria {
       System.out.printf("Insira uma opção válida");
       main(null);
     }
+    
   }
   
 
 	public static void main(String args[]){  
-   
-   saldo = 0;
+
+    saldo = 0;
 
     menu();    
     
-    System.out.print(saldo);
+    //System.out.print(saldo);
     
     System.exit(0);
 		
